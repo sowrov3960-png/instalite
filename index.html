@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InstaLite</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#fff;
+ color:#111;
+ font-family:Arial,sans-serif;
+}
+header{
+ padding:16px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ border-bottom:1px solid #ddd;
+}
+.logo{font-size:27px;font-weight:bold}
+header span{font-size:23px}
+.stories{
+ display:flex;
+ gap:15px;
+ padding:16px 10px;
+ overflow-x:auto;
+ border-bottom:1px solid #ddd;
+}
+.story{text-align:center;min-width:65px;font-size:12px}
+.circle{
+ width:58px;height:58px;border:2px solid #111;
+ border-radius:50%;display:grid;
+ place-items:center;font-size:25px;
+ margin:auto auto 5px;
+}
+.post{border-bottom:1px solid #ddd}
+.user{display:flex;align-items:center;padding:12px;gap:10px}
+.avatar{
+ width:36px;height:36px;border-radius:50%;
+ background:#111;color:white;
+ display:grid;place-items:center
+}
+.photo{
+ height:300px;background:#eee;
+ display:grid;place-items:center;
+ font-size:55px;color:#555;
+}
+.actions{padding:12px;font-size:25px}
+.caption{padding:0 12px 15px}
+nav{
+ position:fixed;bottom:0;width:100%;
+ background:white;border-top:1px solid #ddd;
+ display:flex;justify-content:space-around;
+ padding:14px;font-size:24px;
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">InstaLite</div>
+ <div><span>♡</span> &nbsp; <span>＋</span></div>
+</header>
+
+<div class="stories">
+ <div class="story"><div class="circle">＋</div>Your story</div>
+ <div class="story"><div class="circle">😊</div>Rahim</div>
+ <div class="story"><div class="circle">🌸</div>Sumaiya</div>
+ <div class="story"><div class="circle">😎</div>Karim</div>
+ <div class="story"><div class="circle">❤️</div>Friends</div>
+</div>
+
+<div class="post">
+ <div class="user">
+  <div class="avatar">R</div>
+  <b>InstaLite User</b>
+  <span style="margin-left:auto">•••</span>
+ </div>
+ <div class="photo">📷</div>
+ <div class="actions">
+  <span onclick="like(this)">♡</span>
+  &nbsp; ♧ &nbsp; ➤
+ </div>
+ <div class="caption">
+  <b>125 likes</b>
+  <p><b>InstaLite User</b> Welcome to InstaLite! ❤️</p>
+ </div>
+</div>
+
+<nav>
+ <span>⌂</span>
+ <span>⌕</span>
+ <span onclick="alert('Create Post')">＋</span>
+ <span>♡</span>
+ <span>◉</span>
+</nav>
+
+<script>
+function like(el){
+ el.innerHTML=el.innerHTML==='♡'?'♥':'♡';
+}
+</script>
+
+</body>
+</html>
