@@ -1,52 +1,107 @@
-InstaLite ♡
-⌕♡
 
-
-+
-Your story
-
-
-Sadia
-
-
-Riya
-
-
-Arif
-
-
-Mim
-
-Sadia_Queen ♡
-২ ঘণ্টা আগে
-⋯
-♡♧➤♧
-12.5K likes
-Sadia_Queen ফুলের মাঝে সুন্দর একটি দিন 🌸
-#InstaLite #GoodVibes
-
-Arif_Official
-৫ ঘণ্টা আগে
-♡♧➤
-Arif_Official প্রকৃতির কাছে একটু সময় 🌿
-My Profile
-
-
-
-0Posts
-125Followers
-180Following
-Your Name ♡
-স্বপ্ন দেখি, হাসি ছড়াই ✨
-Welcome to my InstaLite profile
-Edit Profile
-Create Post ♡
-Share Post
-ছবি নির্বাচন করে ক্যাপশন লিখে পোস্ট করুন।
-Discover
-
-Activity ♡
-আপনার ভালোবাসা এখানে!নতুন লাইক ও নোটিফিকেশন পরে দেখা যাবে।
-⌂⌕＋♡♙
-
-×
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InstaLite</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fafafa;color:#222;font-family:Arial}
+header{background:white;padding:15px;display:flex;justify-content:space-between;border-bottom:1px solid #ddd}
+.logo{font-size:25px;font-weight:bold;color:#d62976}
+button{border:0;padding:10px;border-radius:8px;cursor:pointer}
+.container{max-width:480px;margin:auto;padding-bottom:70px}
+.stories{display:flex;gap:15px;overflow:auto;background:white;padding:15px}
+.story{text-align:center;min-width:65px;font-size:12px}
+.circle{width:58px;height:58px;border-radius:50%;background:linear-gradient(45deg,orange,#e1306c,#833ab4);padding:3px;margin:auto auto 5px}
+.circle img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid white}
+.post{background:white;margin:12px 0;border:1px solid #eee}
+.posthead{padding:12px;font-weight:bold}
+.post img{width:100%;display:block}
+.actions{padding:10px}
+.actions button{font-size:24px;background:white}
+.caption{padding:0 12px 12px}
+nav{position:fixed;bottom:0;background:white;width:100%;display:flex;justify-content:space-around;border-top:1px solid #ddd}
+nav button{background:white;font-size:23px}
+.hidden{display:none}
+.profile{text-align:center;padding:30px;background:white}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">InstaLite ♡</div>
+<button onclick="newPost()">＋ Create</button>
+</header>
+<div class="container">
+<section id="home">
+<div class="stories">
+<div class="story"><div class="circle"><img src="https://i.pravatar.cc/100?img=12"></div>Your story</div>
+<div class="story"><div class="circle"><img src="https://i.pravatar.cc/100?img=47"></div>Sadia</div>
+<div class="story"><div class="circle"><img src="https://i.pravatar.cc/100?img=11"></div>Riya</div>
+<div class="story"><div class="circle"><img src="https://i.pravatar.cc/100?img=33"></div>Arif</div>
+<div class="story"><div class="circle"><img src="https://i.pravatar.cc/100?img=44"></div>Mim</div>
+</div>
+<div id="posts">
+<div class="post">
+<div class="posthead">🟣 Sadia_Queen ♡</div>
+<img src="https://picsum.photos/id/1011/700/600">
+<div class="actions"><button onclick="like(this)">♡</button> <button onclick="alert('Comment feature demo')">♧</button> ➤</div>
+<div class="caption">❤️ <span>125</span> likes<br><br><b>Sadia_Queen</b> ফুলের মাঝে সুন্দর একটি দিন 🌸</div>
+</div>
+<div class="post">
+<div class="posthead">🟣 Arif_Official</div>
+<img src="https://picsum.photos/id/1015/700/600">
+<div class="actions"><button onclick="like(this)">♡</button> <button>♧</button> ➤</div>
+<div class="caption">❤️ <span>89</span> likes<br><br><b>Arif_Official</b> প্রকৃতির কাছে একটু সময় 🌿</div>
+</div>
+</div>
+</section>
+<section id="search" class="hidden">
+<h2 style="padding:15px">Discover 🔍</h2>
+<input placeholder="Search..." style="padding:12px;width:90%;margin:5%">
+</section>
+<section id="profile" class="hidden profile">
+<div style="font-size:65px">👤</div>
+<h2>Sowrov Roy</h2>
+<p>@sowrov3960</p>
+<p>2 Posts　125 Followers　180 Following</p>
+<button onclick="alert('Edit Profile')">Edit Profile</button>
+</section>
+</div>
+<nav>
+<button onclick="page('home')">🏠</button>
+<button onclick="page('search')">🔍</button>
+<button onclick="newPost()">➕</button>
+<button onclick="page('profile')">👤</button>
+</nav>
+<script>
+function page(id){
+['home','search','profile'].forEach(x=>document.getElementById(x).classList.add('hidden'));
+document.getElementById(id).classList.remove('hidden');
+}
+function like(b){
+let n=b.closest('.post').querySelector('.caption span');
+let liked=b.dataset.liked==='yes';
+b.dataset.liked=liked?'no':'yes';
+b.innerText=liked?'♡':'❤️';
+n.innerText=Number(n.innerText)+(liked?-1:1);
+}
+function newPost(){
+let t=prompt('আপনার পোস্ট লিখুন');
+if(!t)return;
+let d=document.createElement('div');
+d.className='post';
+let h=document.createElement('div');
+h.className='posthead';
+h.innerText='🟣 Sowrov Roy';
+let c=document.createElement('div');
+c.className='caption';
+c.innerText=t;
+d.append(h,c);
+document.getElementById('posts').prepend(d);
+page('home');
+}
+</script>
+</body>
+</html>
